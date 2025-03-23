@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
           item.addEventListener("click", function () {
             let curso = this.getAttribute("data-curso");
             let mensaje = `Hola, me interesa tomar clases de ${curso}. ¿Podrían darme más información?`;
-            let url = `https://wa.me/1234567890?text=${encodeURIComponent(mensaje)}`;
+            let url = `https://wa.me/56951702824?text=${encodeURIComponent(mensaje)}`;
             window.open(url, "_blank");
           });
         });

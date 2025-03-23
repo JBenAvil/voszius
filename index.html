@@ -105,6 +105,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="#proceso">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#00AFFE"><path d="M319-250h322v-60H319v60Zm0-170h322v-60H319v60ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h361l219 219v521q0 24-18 42t-42 18H220Zm331-554v-186H220v680h520v-494H551ZM220-820v186-186 680-680Z"/></svg>
+                  <br><b>Integración</b>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#agenda">
                   <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#00AFFE"><path d="M479-120 189-279v-240L40-600l439-240 441 240v317h-60v-282l-91 46v240L479-120Zm0-308 315-172-315-169-313 169 313 172Zm0 240 230-127v-168L479-360 249-485v170l230 127Zm1-240Zm-1 74Zm0 0Z"/></svg>
                   <br><b>Cursos</b>
@@ -158,24 +164,167 @@
     </div>
   </div>
   </section>
-  <br>
-  <br>
-  <br>
-        
+  
+    <section id="proceso" class="container text-center my-5">
+      <br>
+      <h2>Nuestro Proceso de Integración es Totalmente Gratis
+        <br>
+         y Esta Orientado a Entregarte la Propuesta
+        <br> 
+         Más Óptima para Tus Necesidades</h2>
+      <br>
+      <div class="row justify-content-center align-items-center">
+          <div class="col-md-1 col-sm-6 step" data-step="0">
+              <i class="fas fa-calendar-alt fa-3x"></i>
+              <p>Agenda</p>
+          </div>
+          <div class="col-md-1 d-none d-md-block"><span class="arrow">&#10140;</span></div>
+          <div class="col-md-1 col-sm-6 step" data-step="1">
+              <i class="fas fa-comments fa-3x"></i>
+              <p>Entrevista</p>
+          </div>
+          <div class="col-md-1 d-none d-md-block"><span class="arrow">&#10140;</span></div>
+          <div class="col-md-1 col-sm-6 step" data-step="2">
+              <i class="fas fa-file-alt fa-3x"></i>
+              <p>Diagnóstico</p>
+          </div>
+          <div class="col-md-1 d-none d-md-block"><span class="arrow">&#10140;</span></div>
+          <div class="col-md-1 col-sm-6 step" data-step="3">
+              <i class="fas fa-user fa-3x"></i>
+              <p>Evaluación</p>
+          </div>
+          <div class="col-md-1 d-none d-md-block"><span class="arrow">&#10140;</span></div>
+          <div class="col-md-1 col-sm-6 step" data-step="4">
+              <i class="fas fa-lightbulb fa-3x"></i>
+              <p>Propuesta</p>
+          </div>
+          <div class="col-md-1 d-none d-md-block"><span class="arrow">&#10140;</span></div>
+          <div class="col-md-1 col-sm-6 step" data-step="5">
+              <i class="fas fa-handshake fa-3x"></i>
+              <p>Contratación</p>
+          </div>
+      </div>
+  </section>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="stepModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="stepTitle"></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="stepDescription"></div>
+          </div>
+      </div>
+  </div>
+  
+  <script>
+      const stepsData = [
+          { 
+            title: "Agenda una reunión", 
+            description: "Selecciona el curso de tu interés haciendo clic en el listado de cada área de estudio, envía el WhatsApp correspondiente el cúal te pondrá en una agenda de contacto." 
+          },
+          { 
+            title: "Entrevista", 
+            description: "Un Profesional se contactará contigo para una entrevista donde se conversará sobre las necesidades y objetivos del estudiante." 
+          },
+          { 
+            title: "Prueba Diagnóstica", 
+            description: "Aplicaremos una evaluación diagnóstica para conocer el nivel del estudiante." 
+          },
+          { 
+            title: "Evaluación con Psicopedagoga", 
+            description: "Junto a un Profesional analizamos los resultados y necesidades adicionales del estudiante." 
+          },
+          { 
+            title: "Propuesta de Trabajo", 
+            description: "En base a los resultados te presentamos una propuesta personalizada para el aprendizaje." 
+          },
+          { 
+            title: "Contratación", 
+            description: "Formalizamos el acuerdo a través de un contrato y comenzamos las clases; recuerda que el proceso anterior es totalmente gratis. " 
+          }
+      ];
+  
+      document.querySelectorAll('.step').forEach(step => {
+          step.addEventListener('click', function() {
+              const stepIndex = this.getAttribute('data-step');
+              document.getElementById('stepTitle').innerText = stepsData[stepIndex].title;
+              document.getElementById('stepDescription').innerText = stepsData[stepIndex].description;
+              new bootstrap.Modal(document.getElementById('stepModal')).show();
+          });
+      });
+  </script>
+  
+  <style>
+      .step {
+          cursor: pointer;
+          padding: 20px;
+          border-radius: 10px;
+          transition: transform 0.3s;
+      }
+      .step:hover {
+          transform: scale(1.1);
+      }
+      .arrow {
+          font-size: 2rem;
+          color: #007bff;
+      }
+  </style>
   <section id="agenda" class="container text-center">
+      <br>
+      <h2>Agenda Ahora el Curso de Tu Interés</h2>
+      <br>
+      <br>
     <div class="row justify-content-center" id="contenedor-categorias"></div>
   </section>
 
-</body>  
+</body> 
 <footer>
-  <section style="background-color: #e3f2fd;">
-    <br>
-    <br>
-    <b>Pie de Páginas</b>
-    <br>
-    <br>
-    <b>Desarrollado por <a href="https://www.jbenavil.com/">JBenAvil</a></b>
-
+  <section style="background-color: #e3f2fd; padding: 20px;">
+    <div class="container">
+      <div class="row text-center align-items-center">
+        <!-- Primera sección: Imagen -->
+        <div class="col-md-4 mb-3">
+          <br>
+          <img src="static/icon/voszius.png" alt="Imagen" class="img-fluid" style="max-width: 60%; border-radius: 10px;">
+          <br>
+        </div>
+        
+        <!-- Segunda sección: Redes Sociales -->
+        <div class="col-md-4 mb-3">
+          <br>
+          <h5>Redes de Contacto</h5>
+          <a style="text-decoration: none;" href="https://facebook.com/" target="_blank" class="me-3">
+            <i class="fab fa-facebook fa-2x"></i>
+          </a>
+          <a style="text-decoration: none;" href="https://instagram.com/vosziusclass" target="_blank" class="me-3">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+          <a style="text-decoration: none;" href="https://wa.me/56951702824" target="_blank">
+            <i class="fab fa-whatsapp fa-2x"></i>
+          </a>
+          <br>
+        </div>
+        
+        <!-- Tercera sección: Dos Imágenes -->
+        <div class="col-md-4 mb-3">
+          <br>
+            <img src="static/icon/logo_paypal.png" alt="Imagen 2" class="img-fluid mb-2" style="max-width: 60%; border-radius: 10px;">
+            <img src="static/icon/webpay_icon.png" alt="Imagen 3" class="img-fluid" style="max-width: 60%; border-radius: 10px;">
+          <br>
+        </div>
+      </div>
+      <div class="row mt-3 text-center text-md-start">
+        <div class="col-md-6 text-md-start mb-2 mb-md-0">
+          <b>© Copyright 2025 by Voszius Spa.</a></b>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <b>Desarrollado por <a href="https://www.jbenavil.com/">JBenAvil</a></b>
+        </div>
+      </div>
+    </div>
   </section>
-</footer>
+</footer> 
 </html>
