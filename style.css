@@ -32,4 +32,7 @@ html, body {
     color: white; /* Texto en blanco */
     transition: all 0.2s ease-in-out; /* Transición suave */
   }
-    
+  
+  i.fab {
+    color: white;
+}
