@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <div class="card shadow-lg">
                 <div class="card-body">
                   <h5 class="card-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#00AFFE">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#0D6EFD">
                       <path d="${categoria.icono}"/>
                     </svg>
                     <br><b>${categoria.categoria}</b>
